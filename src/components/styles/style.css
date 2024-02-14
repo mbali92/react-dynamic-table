@@ -1,0 +1,33 @@
+@import url("https://cdn.lineicons.com/4.0/lineicons.css");
+.container{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+.table{
+    border: 1px solid #bbb;
+}
+.page-row{
+    display:flex;
+    justify-content: space-between;
+}
+.row-option{
+    width: 1%;
+    text-align: center;
+}
+.row-option i{
+    text-align: center;
+    width: 100%;
+}
+.field-name{
+    border-left: 1px solid #bbb;
+    text-align: center;
+    width: 9%;
+    height: 2rem;
+}
+.field-name:first-child{
+    border-left: none;
+}
+.field-row {
+    border-bottom: 1px solid #bbb;
+}
