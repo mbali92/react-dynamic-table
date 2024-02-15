@@ -4,6 +4,12 @@
     margin: 0 auto;
     
 }
+
+.edit-value{
+
+    border: none;
+    
+}
 .table{
     border: 1px solid #bbb;
 }
