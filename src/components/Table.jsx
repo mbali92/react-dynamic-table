@@ -28,9 +28,8 @@ function Table() {
 //    Thabang 
 // 1. create states 
   const [hiddenFields, setHiddenFields] = useState({
-    priority: false,
-    status: false,
-    comment: false
+    priority: true,
+    comment: true
   });
 
   const [showDropdown, setShowDropdown] = useState(false);
@@ -117,11 +116,11 @@ function Table() {
             <div className='field-name column-field'>Title</div>
             <div className='field-name'>Description</div>
             <div className='field-name'>Owner</div>
+	    <div className='field-name'>Status</div>
             <div className='field-name'>Due-Date</div>
             <div className='field-name'>Start-Date</div>
 	    {/* hidden fields */}
             {!hiddenFields.priority && <div className='field-name'>Priority</div>}
-            {!hiddenFields.status && <div className='field-name'>Status</div>}
             {!hiddenFields.comment && <div className='field-name'>Comment</div>}
           </div>
 
@@ -132,7 +131,15 @@ function Table() {
               <input type='text' className='field-name row-data edit-value' name='title' onChange={(e) => handleEdit(e, data.title)} defaultValue={data.title} />
               <input type='text' className='field-name row-data edit-value' name='description' onChange={(e) => handleEdit(e, data.title)} defaultValue={data.description} />
               <input type='text' className='field-name row-data edit-value' name='owner' onChange={(e) => handleEdit(e, data.title)} defaultValue={data.owner} />
-              <input type='text' className='field-name row-data edit-value' name='startDate' onChange={(e) => handleEdit(e, data.title)} defaultValue={data.startDate} />
+		{/* dropdown selection */}
+              <div className='field-name row-data'>
+                <select name="status" id="" onChange={(e) => accessSelectValue(e, data.title)}>
+                  <option value="todo">todo</option>
+                  <option value="in progress">in progress</option>
+                  <option value="done">done</option>
+                </select>
+              </div>
+	      <input type='text' className='field-name row-data edit-value' name='startDate' onChange={(e) => handleEdit(e, data.title)} defaultValue={data.startDate} />
               <input type='text' className='field-name row-data edit-value' name='endDate' onChange={(e) => handleEdit(e, data.title)} defaultValue={data.endDate} />
               {/* hidden priority field rows */}
 	      {!hiddenFields.priority &&
@@ -144,17 +151,7 @@ function Table() {
                 </select>
               </div>
 }
-		{/* hidden status field rows */}
-              {!hiddenFields.status && 
-              <div className='field-name row-data'>
-                <select name="status" id="" onChange={(e) => accessSelectValue(e, data.title)}>
-                  <option value="todo">todo</option>
-                  <option value="in progress">in progress</option>
-                  <option value="done">done</option>
-                </select>
-              </div>
-}
-		{/* hidden comment fields rows */}
+		{/* hidden comment field rows */}
               {!hiddenFields.comment && <input type='text' className='field-name row-data edit-value' name='comment' onChange={(e) => handleEdit(e, data.title)} defaultValue={data.comment} />}
             </div>
           ))}
