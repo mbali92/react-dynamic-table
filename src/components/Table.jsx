@@ -115,6 +115,15 @@ const handleEdit = (e, title) => {
     console.log(data)
    }
 
+//    Thabang 
+
+// 1. create states  
+const [hiddenFields, setHiddenFields] = useState({
+	priority: false, status: false, comment: false
+});
+
+const [showDropDown, setShowDropdown] = useState(false);
+
 
 
    
@@ -190,6 +199,8 @@ const handleEdit = (e, title) => {
         } 
        </div>
        <button onClick={ addRow}>Add Row</button>
+       <br />
+       <button >optional rows</button>
 
     </div>
       
@@ -199,3 +210,4 @@ const handleEdit = (e, title) => {
 }
 
 export default Table
+
