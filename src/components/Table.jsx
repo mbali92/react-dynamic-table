@@ -125,10 +125,17 @@ const [hiddenFields, setHiddenFields] = useState({
 const [showDropDown, setShowDropdown] = useState(false);
 
 
+// 2. create functions to toggles fields visibility and dropdown menu state
+const tooggleFieldVisibiltiy = (field) => {
+	setHiddenFields(prevState => ({...prevState, [field]: !prevState[fields]}));
+};
 
-   
+const toggleDropdown = () => {
+	setShowDropdown(!showDropDown)
+};
 
-   
+// 3. create a button and add event listeners to toggle field visibility
+console.log(showDropDown)
 
   return (
     <>
@@ -200,7 +207,7 @@ const [showDropDown, setShowDropdown] = useState(false);
        </div>
        <button onClick={ addRow}>Add Row</button>
        <br />
-       <button >optional rows</button>
+       <button onClick={toggleDropdown}><i className="lni lni-more-alt"></i></button>
 
     </div>
       
