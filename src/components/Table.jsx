@@ -122,6 +122,8 @@ function Table() {
 	    {/* hidden fields */}
             {!hiddenFields.priority && <div className='field-name'>Priority</div>}
             {!hiddenFields.comment && <div className='field-name'>Comment</div>}
+	    {/* icon to toggle the hidden fields dropdown menu */}
+	    <div className="row-option" onClick={toggleDropdown}><i className="lni lni-more-alt"></i></div>
           </div>
 
 	{/* tabble rows */}
@@ -159,7 +161,7 @@ function Table() {
 
 	{/* dropdown menu which shows and toggles the individual hidden fields */}
         {showDropdown &&
-          <div className="dropdown">
+          <div className="dropdown-menu">
             <ul>
               {Object.keys(hiddenFields).map(field => (
                 <li key={field} onClick={() => handleDropdownSelection(field)}>{hiddenFields[field] ? `+ ${field}` : `- ${field}`}</li>
@@ -171,7 +173,7 @@ function Table() {
         <button onClick={addRow}>Add Row</button>
         <br />
 	{/* button to toggle the hidden fields dropdown menu */}
-        <button onClick={toggleDropdown}><i className="lni lni-more-alt"></i></button>
+        {/* <button onClick={toggleDropdown}><i className="lni lni-more-alt"></i></button> */}
 
       </div>
     </>
