@@ -1,39 +1,72 @@
 @import url("https://cdn.lineicons.com/4.0/lineicons.css");
-.container{
-    width: 80%;
-    margin: 0 auto;
-    
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+
 }
 
-.edit-value{
+.edit-value {
 
-    border: none;
-    
+	border: none;
+
 }
-.table{
-    border: 1px solid #bbb;
+
+.table {
+	border: 1px solid #bbb;
 }
-.page-row{
-    display:flex;
-    justify-content: space-between;
+
+.page-row {
+	display: flex;
+	justify-content: space-between;
 }
-.row-option{
-    width: 1%;
-    text-align: center;
+
+.row-option {
+	width: 1%;
+	text-align: center;
 }
-.row-option i{
-    text-align: center;
-    width: 100%;
+
+.row-option i {
+	text-align: center;
+	width: 100%;
 }
-.field-name{
-    border-left: 1px solid #bbb;
-    text-align: center;
-    width: 9%;
-    height: 2rem;
+
+.field-name {
+	border-left: 1px solid #bbb;
+	text-align: center;
+	width: 9%;
+	height: 2rem;
 }
-.field-name:first-child{
-    border-left: none;
+
+.field-name:first-child {
+	border-left: none;
 }
+
 .field-row {
-    border-bottom: 1px solid #bbb;
+	border-bottom: 1px solid #bbb;
+}
+
+/* drop down table fields */
+.dropdown-menu {
+	position: absolute;
+	top: 8px;
+	right: 100px;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	z-index: 1;
+}
+
+.dropdown-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dropdown-menu ul li {
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.dropdown-menu ul li:hover {
+	background-color: #bbb;
 }
