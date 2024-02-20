@@ -22,6 +22,7 @@ function Table() {
   priority:'critical',
   comment:'comment'
  }]);
+ 
 //    Thabang 
 // 1. create states 
   const [hiddenFields, setHiddenFields] = useState({
@@ -48,10 +49,12 @@ function Table() {
     toggleDropdown();
   };
 // end
+
  useEffect(()=>{
     console.log(data)
  },[data])
 
+//  adds an empty row
    const addRow=()=>{
       const singlerow= {
             title:'',
@@ -66,12 +69,13 @@ function Table() {
     setData(prevArray => [...prevArray, singlerow])
    }
 
+  //  this function deletes the row 
    const handleDelete = (title) =>{
     const newfields  = data.filter((filter)=> filter.title !== title);
     setData(newfields)
    }
 
-
+   // This function handles the field changes
   const handleEdit = (e, title,name) => {
   
   const propertyValue = e.target.innerText;
@@ -87,7 +91,7 @@ function Table() {
  
 };
 
-
+// This function handles the dropdown and dates changes
 const handleData=(e,index)  => {
   const name = e.target.name;
   const newValue = e.target.value;
@@ -155,7 +159,7 @@ const handleData=(e,index)  => {
           )}
         </div>
 
-	{/* dropdown menu which shows and toggles the individual hidden fields */}
+	      {/* dropdown menu which shows and toggles the individual hidden fields */}
         {showDropdown &&
           <div className="dropdown-menu">
             <ul>
@@ -165,12 +169,8 @@ const handleData=(e,index)  => {
             </ul>
           </div>
         }
-
+        {/* add row button */}
         <button onClick={addRow}>Add Row</button>
-        <br />
-	{/* button to toggle the hidden fields dropdown menu */}
-        {/* <button onClick={toggleDropdown}><i className="lni lni-more-alt"></i></button> */}
-
       </div>
     </>
   )
