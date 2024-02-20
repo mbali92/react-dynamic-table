@@ -43,11 +43,6 @@
     overflow: hidden;
 }
 
-/* field-name h6{
-
-} */
-
-
 .field-name:first-child{
     border-left: none;
 }
@@ -56,7 +51,7 @@
     border-bottom: 1px solid #bbb;
 }
 
-
+/* selection styling*/
 .field-name select{
    width: 100%;
    height: 100%;
@@ -73,4 +68,29 @@ select option {
 }
 #progress{
     background-color: yellow;
+}
+
+/* drop down table fields */
+.dropdown-menu {
+	position: absolute;
+	top: 8px;
+	right: 100px;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	z-index: 1;
+}
+
+.dropdown-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.dropdown-menu ul li {
+	padding: 5px 10px;
+	cursor: pointer;
+}
+
+.dropdown-menu ul li:hover {
+	background-color: #bbb;
 }
