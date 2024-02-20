@@ -1,31 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import "./styles/style.css"
-import axios from 'axios';
 
 function Table() {
 
   
 
- const [data, setData] = useState({});
+ const [data, setData] = useState([{
+  title:'title1',
+  description:'description',
+  owner:'owner',
+  status:'status',
+  startDate:'12-12-12',
+  endDate:'12-12-12',
+  priority:'low',
+  comment:'comment'
+ },
+ {
+  title:'title2',
+  description:'description',
+  owner:'owner',
+  status:'status',
+  startDate:'12-12-12',
+  endDate:'12-12-12',
+  priority:'critical',
+  comment:'comment'
+ }]);
 
-
-
- const allData = async () => {
-  
-  try {
-    const newData = await axios.get('http://localhost:8080/getAllTask')
-    console.log("succes")
-    setData(newData.data);
-    console.log("db data")
-  } catch (error) {
-    console.log(error)
-  }
-
- }
-//  useEffect(()=>{
-//     console.log(data)
-//  },[data])
-
+ useEffect(()=>{
+    console.log(data)
+ },[data])
 
 
    const addRow=()=>{
@@ -132,7 +135,7 @@ const handleData=(e,index)  => {
         </div>)
         } 
        </div>
-       <button onClick={ ()=>allData()}>Add Row</button>
+       <button onClick={ addRow}>Add Row</button>
 
     </div>
       
