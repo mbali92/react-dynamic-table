@@ -97,13 +97,13 @@ const handleData=(e,index)  => {
 };
   
   return (
-
+    <>
     <div className="container">
        <div className="table">
         
     {/* table fields */}
           <div className="field-row  page-row">
-          <div className="row-option"><i className="lni lni-more-alt"></i></div>
+          <div className="row-option" ><i className="lni lni-more-alt"></i></div>
           <div className='field-name column-field'>Title</div>
           <div className='field-name'>Description</div>
           <div className='field-name'>Owner</div>
@@ -120,7 +120,7 @@ const handleData=(e,index)  => {
              {/* table rows */}
         {data.map((data,index)=>
         <div className="field-row  page-row"key={data.title}>
-          <div className="row-option" ><i className="lni lni-more-alt"></i></div>
+          <div className="row-option" ><i className="lni lni-more-alt" onClick={() =>handleDelete(data.title)}></i></div>
           <div className='field-name row-data edit-value'  contentEditable onInput={(e)=>handleEdit(e,data.title,"title")} ><h6>{data.title}</h6></div>
           <div className='field-name row-data edit-value'  contentEditable onInput={(e)=>handleEdit(e,data.title,"description")} ><h6>{data.description}</h6></div>
           <div className='field-name row-data edit-value'  contentEditable onInput={(e)=>handleEdit(e,data.title,"owner")} ><h6>{data.owner}</h6></div>
@@ -152,7 +152,7 @@ const handleData=(e,index)  => {
                 <div className='field-name row-data edit-value'  contentEditable onInput={(e)=>handleEdit(e,data.title,"comment")}><h6>{data.comment}</h6></div> 
 }
             </div>
-          ))}
+          )}
         </div>
 
 	{/* dropdown menu which shows and toggles the individual hidden fields */}
